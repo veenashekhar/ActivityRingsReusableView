@@ -19,7 +19,7 @@ struct ContentView: View {
     @State private var progress6: CGFloat = 0.8
     @State private var progress7: CGFloat = 0.9
     
-    @State private var numberOfCircles : Int = 1
+    @State private var numberOfCircles : Int = 7
     @State private var idealWidth : CGFloat = 50
     @State private var idealWidth1 : CGFloat = 75
     @State private var idealWidth2 : CGFloat = 125
@@ -249,7 +249,9 @@ struct ActivityRingsView:View{
 struct MyView : View{
     @Binding var progress: CGFloat
     @Binding var width:CGFloat
-    var colours:[Color] = [Color.indigo, Color.white]
+   // var colours:[Color] = [Color.indigo, Color.white]
+    var colours:[Color] = [Color.lightRed, Color.darkRed]
+
     var body: some View {
         //var colours:[Color] = [Color.darkRed, Color.lightRed]
         
@@ -275,12 +277,12 @@ struct MyView : View{
                 
                 Circle()
                     .frame(width: 20, height: 20)
-                    .foregroundColor(Color.indigo)
+                    .foregroundColor(Color.darkRed)
                     .offset(y: offSetVal )
                 
                 Circle()
                     .frame(width: 20, height: 20)
-                    .foregroundColor(progress > 0.95 ? Color.white: Color.indigo.opacity(0))
+                    .foregroundColor(progress > 0.95 ? Color.lightRed: Color.lightRed.opacity(0))
                 // .offset(y: -25)
                     .offset(y: offSetVal)
                     .rotationEffect(Angle.degrees(360 * Double(progress)))
